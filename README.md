@@ -16,7 +16,9 @@ PLAYER can win the game by MAKING 3 CONSECUTIVE 'X' OR 'Y' horizontally, vertica
 the game will show alert and info messages while playing and winning;
 
 source code link(ttt.py):
-
 https://github.com/prathishdevendran/DPRATHISH-HACKATHON/blob/main/ttt.py
+
+screenshot link:
+https://github.com/prathishdevendran/DPRATHISH-HACKATHON/blob/main/image.png
 
 THANK YOU
