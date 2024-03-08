@@ -17,20 +17,16 @@ the game will show alert and info messages while playing and winning;
 
 
 //source code(still working)
+
 from tkinter import *
 from tkinter import messagebox
-
 main = Tk()
 main.title('TIC TAC TO GAME')
-
 gui = Frame(pady=70)
 gui.configure(bg='black')
 clicked = True
 count = 0 
-
 gui.pack()
-
-
 def reset():
     global count
     count = 0
