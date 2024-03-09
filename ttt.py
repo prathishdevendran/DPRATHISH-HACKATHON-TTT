@@ -1,36 +1,41 @@
 from tkinter import *
 from tkinter import messagebox
+from time import *
+
 main = Tk()
-main.title = ('TIC TAC TOE GAME')
-main.geometry('644x708')
+main.title('TIC TAC TO GAME')
+main.geometry("644x708")
 main.configure(bg='black')
 main.minsize(644,708)
-f1 = Frame(main,bg='black')
+f1 = Frame(main,bg="black")
 f1.pack(fill='both')
-head= Label(f1,text='TIC TAC TOE MULTIPLAYER',font=("Times",30,"bold"),fg="#8e0",bg="black",padx=20,pady=35)
+head = Label(f1,text="TIC TAC TOE MULTIPLAYER",font=("Times",30,"bold"),fg='#8e0',bg='black',justify='center',padx=20,pady=35)
 head.pack(fill='x')
 
-game = Frame(pady=70)
-game.configure(bg='black')
+gui = Frame(pady=70)
+gui.configure(bg='black')
 clicked = True
-count = 0
-game.pack()
+count = 0 
+
+gui.pack()
+
 
 
 def reset():
     global count
     count = 0
     new_game = messagebox.askquestion('TIC TAC TOE','Do you want to PLAY again?')
-    if new_game == 'yes':
-        b1['text']= " "
-        b2['text']= " "
-        b3['text']= " "
-        b4['text']= " "
-        b5['text']= " "
-        b6['text']= " "
-        b7['text']= " "
-        b8['text']= " "
-        b9['text']= " "
+    if new_game =='yes':
+        b1["text"] = " "
+        b2["text"] = " "
+        b3["text"] = " "
+        b4["text"] = " "
+        b5["text"] = " "
+        b6["text"] = " "
+        b7["text"] = " "
+        b8["text"] = " "
+        b9["text"] = " "
+        
     else:
         b1.config(state=DISABLED)
         b2.config(state=DISABLED)
@@ -117,34 +122,35 @@ def checkifwon():
 
 def b_click(b):
     global clicked,count
-    if b['text'] == ' ' and clicked == True:
-        b['text'] = 'X'
+    if b["text"] == " " and clicked == True:
+        b["text"] = "X"
         clicked = False
         count += 1
         checkifwon()
-    elif b['text'] == " " and clicked == False:
-        b['text'] = 'O'
+    elif b["text"] == " " and clicked == False:
+        b["text"] = "O"
         clicked = True
-        count +=1 
+        count += 1
         checkifwon()
     else:
-        messagebox.showerror('TIC TAC TOE','Sorry, That box is already been selected\nPick Another box...')
-    
-    if count==9 and winner == False:
-        messagebox.showerror('TIC TAC TOE',"Oops! It's a DRAW!")
+        messagebox.showerror("Tic Tac Toe","Sorry, That box is already been selected\nPick Another box..")
+
+    if count == 9 and winner == False:
+        messagebox.showinfo("Tic Tac Toe","Oops!, It's a Draw!")
         reset()
 
-b1= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b1),bg="#E9E8E8")
-b2= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b2),bg="#E9E8E8")
-b3= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b3),bg="#E9E8E8")
-b4= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b4),bg="#E9E8E8")
-b5= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b5),bg="#E9E8E8")
-b6= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b6),bg="#E9E8E8")
-b7= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b7),bg="#E9E8E8")
-b8= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b8),bg="#E9E8E8")
-b9= Button(game,text = " ",font=("helvetica",20),height=3,width=6,command=lambda: b_click(b9),bg="#E9E8E8")
 
-
+#button
+b2 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b2),bg='#E9E8E8')
+b3 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b3),bg='#E9E8E8')
+b1 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b1),bg='#E9E8E8')
+b4 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b4),bg='#E9E8E8')
+b5 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b5),bg='#E9E8E8')
+b6 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b6),bg='#E9E8E8')
+b7 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b7),bg='#E9E8E8')
+b8 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b8),bg='#E9E8E8')
+b9 = Button(gui, text= " ",font=("Helvetica",20),height=3,width=6,command= lambda: b_click(b9),bg='#E9E8E8')
+#grid
 b1.grid(row=0,column=0)
 b2.grid(row=0,column=1)
 b3.grid(row=0,column=2)
@@ -157,9 +163,14 @@ b7.grid(row=2,column=0)
 b8.grid(row=2,column=1)
 b9.grid(row=2,column=2)
 
-Rframe = Frame(main,bg='black')
+
+Rframe = Frame(main,bg="black")
 Rframe.pack(fill='x')
-Rbutton = Button(Rframe,text=" Reset ",font=('TIMES',20),height=3,width=6,command= lambda: reset() , bg='black',fg = '#8e0')
+Rbutton = Button(Rframe, text=" Reset ",font=("TIMES",20),height=3,width=6,command= lambda: reset(),bg='black',fg='#8e0')
 Rbutton.pack(anchor='s',padx=20,pady=20)
+
+# l1 = Label(Rframe,text=count,fg='red')
+# l1.pack()
+
 
 main.mainloop()
