@@ -7,7 +7,7 @@ Venue: 301L
 
 PROBLEM STATEMENT NUMBER: 22
 PROJECT TITLE : MULTIPLAYER TIC TAC TOE GAME USING PYTHON (GUI)
-OBJECTIVE OF PROJECT : MAKING A WORKING GAME WINDOW IN WHICH WE CAN PLAY TIC-TAC-TOE
+OBJECTIVE OF PROJECT : MAKING A WORKING GAME GUI IN WHICH WE CAN PLAY TIC-TAC-TOE
 The game consist of Working buttons and reset buttons(), It also consist of messagebox(alert-box,info-box,question-box) and other features if addable.
 
 The objective of the game:
